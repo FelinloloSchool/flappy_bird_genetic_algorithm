@@ -29,7 +29,7 @@ class Game:
         if all(self.plateau[i][self.width - j - 1] == 0 for i in range(self.height) for j in range(nb_lignes)):
             #création des 2 bouts de tuyau
             espace = 4
-            gap_start = randint(tuyau, self.height - espace - tuyau)
+            gap_start = randint(self.height//10, self.height - espace - self.height//10)
             for i in range(self.height):
                 if i < gap_start or i > gap_start + espace:
                     self.plateau[i][self.width - 1] = -1  # Tuyau représenté par -1
