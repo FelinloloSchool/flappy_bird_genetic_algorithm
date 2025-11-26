@@ -96,7 +96,7 @@ class Game:
                     self.plateau[self.bird_position][self.width//10 - 1] = 0
                     self.plateau[self.bird_position][self.width//10]  = 1
                     self.ajout_tuyau()
-                    if population.gen%14 == 1 and affichage: #  
+                    if population.gen%14 == 0 and affichage: #  
                         self.afficher(oiseau, population.gen)
                         sleep(0.1)
             oiseau += 1
