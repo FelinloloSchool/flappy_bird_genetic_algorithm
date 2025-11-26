@@ -29,7 +29,7 @@ class Game:
         if all(self.plateau[i][self.width - j - 1] == 0 for i in range(self.height) for j in range(nb_lignes)):
             #création des 2 bouts de tuyau
             espace = 4
-            gap_start = randint(self.height//10, self.height - espace - self.height//10)
+            gap_start = randint(self.height//3, self.height - espace - self.height//3)
             for i in range(self.height):
                 if i < gap_start or i > gap_start + espace:
                     self.plateau[i][self.width - 1] = -1  # Tuyau représenté par -1
@@ -96,7 +96,7 @@ class Game:
                     self.plateau[self.bird_position][self.width//10 - 1] = 0
                     self.plateau[self.bird_position][self.width//10]  = 1
                     self.ajout_tuyau()
-                    if population.gen%20 == 0 and affichage: #  
+                    if population.gen%14 == 1 and affichage: #  
                         self.afficher(oiseau, population.gen)
                         sleep(0.1)
             oiseau += 1
